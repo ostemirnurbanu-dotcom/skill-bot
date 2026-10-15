@@ -1,17 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
+	cacheComponents: true,
+	partialPrefetching: true,
+	devIndicators: false,
+
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "api.telegram.org",
+			},
+		],
+	},
 };
 
 export default nextConfig;
