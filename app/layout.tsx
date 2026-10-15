@@ -1,17 +1,18 @@
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import 'bootstrap/dist/css/bootstrap.css'
-import { LayoutProps } from "next/dist/lib/metadata/metadata-resolution-primitives";
+import "bootstrap/dist/css/bootstrap.css";
 
+export const metadata: Metadata = {
+  title: "Репутация участников",
+};
 
-export const metadata:Metadata = {
-	title: "Репутация участников"
-}
-
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
-    <html
-      lang="en"
-    >
+    <html lang="ru">
       <body className="bg-dark">{children}</body>
     </html>
   );
